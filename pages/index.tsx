@@ -6,6 +6,7 @@ import {
   Image,
   useColorModeValue,
   Button,
+  Link,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -13,7 +14,6 @@ import Paragraph from "../components/Paragraph";
 import Section from "../components/Sections";
 import NextLink from "next/link";
 import { BioSection, BioYear } from "../components/Bio";
-import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +24,7 @@ const Home: NextPage = () => {
         p={3}
         mb={6}
         textAlign="center"
+        css={{ backdropFilter: "blur(10px)" }}
       >
         Hello, I&apos;m a full-stack developer based in VietNam!
       </Box>
@@ -106,7 +107,10 @@ const Home: NextPage = () => {
         </Heading>
         <Paragraph>
           Art,{" "}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
+          <Link
+            href="https://www.pinterest.com/hoangdai/my-drawings/"
+            target="_blank"
+          >
             Drawing
           </Link>
         </Paragraph>

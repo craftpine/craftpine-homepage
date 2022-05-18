@@ -5,6 +5,11 @@ import Head from "next/head";
 import Navbar from "../components/NavBar";
 import theme from "../libs/theme";
 import Fonts from "../components/Fonts";
+import { AnimatePresence } from "framer-motion";
+
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+}
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -23,7 +28,17 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <Navbar path={router.asPath} />
 
         <Container maxW="container.md" pt={14}>
-          <Component {...pageProps} key={router.route} />
+          <AnimatePresence
+            exitBeforeEnter
+            initial={true}
+            onExitComplete={() => {
+              if (typeof window !== "undefined") {
+                window.scrollTo({ top: 0 });
+              }
+            }}
+          >
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
         </Container>
       </ChakraProvider>
     </Box>
