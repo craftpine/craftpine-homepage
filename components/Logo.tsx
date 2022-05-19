@@ -9,9 +9,10 @@ const LogoBox = styled.span`
   align-items: center;
   line-height: 20px;
   padding: 10px;
+  transition: all 250ms ease-in-out;
 
-  &:hover img {
-    transform: rotate(20deg);
+  &:hover svg {
+    transform: rotate(10deg);
   }
 `;
 
