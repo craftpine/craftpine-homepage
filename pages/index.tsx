@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   Button,
   Link,
+  Text,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Paragraph from "../components/Paragraph";
@@ -16,7 +17,7 @@ import { BioSection, BioYear } from "../components/Bio";
 
 const Home: NextPage = () => {
   return (
-    <Container p={4}>
+    <Container p={4} maxW="container.sm">
       <Section delay="0.1">
         <Box
           borderRadius={"lg"}
@@ -34,10 +35,13 @@ const Home: NextPage = () => {
       <Section delay="0.2">
         <Box display={{ md: "flex" }}>
           <Box flexGrow={1}>
-            <Heading as={"h2"} variant="page-title" userSelect="none">
+            <Heading as={"h2"} mb={4} variant="page-title" userSelect="none">
               Hoang Dai
             </Heading>
-            <p>Developer / Freehand drawing </p>
+            <Text>Making weird things with web technologies.</Text>
+            <Text fontSize="14px" fontStyle={"italic"}>
+              (Developer / Freehand drawing)
+            </Text>
           </Box>
           <Box
             flexShrink={0}
@@ -64,8 +68,15 @@ const Home: NextPage = () => {
         <Heading as="h3" variant="section-title">
           Work
         </Heading>
-        <Paragraph>HoangDai is a freelance </Paragraph>
-        <Box alignItems="center" my={4}>
+        <Paragraph>
+          HoangDai is a {new Date().getFullYear() - 1995}-year-old Vietnamese
+          Freelance Front-end developer. I like to resolve design problems,
+          create smart user interface and imagine useful interaction, developing
+          rich web experiences & web applications. When not working or futzing
+          around with code, I study how to escape from University. Actually for
+          hire.
+        </Paragraph>
+        <Box justifyContent="center" display="flex" my={4}>
           <NextLink href="/works" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               My portfolio
@@ -119,6 +130,7 @@ const Home: NextPage = () => {
           >
             Drawing
           </Link>
+          , Coding, Gaming
         </Paragraph>
       </Section>
     </Container>
