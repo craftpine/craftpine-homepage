@@ -15,6 +15,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { IoLogoGithub } from "react-icons/io5";
+import { BsLinkedin } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
 import Logo from "./Logo";
 import ThemeToggleButton from "./ThemeToggleButton";
 
@@ -87,7 +89,29 @@ const Navbar = (props: any) => {
             pl={2}
           >
             <IoLogoGithub />
-            Source
+          </LinkItem>
+
+          <LinkItem
+            target="_blank"
+            href="https://www.linkedin.com/in/hoangdai0908"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            <BsLinkedin />
+          </LinkItem>
+
+          <LinkItem
+            href="mailto:hoangdai9895@gmail.com"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            <HiOutlineMail />
           </LinkItem>
         </Stack>
 
@@ -117,6 +141,17 @@ const Navbar = (props: any) => {
                   href="https://github.com/hoangdai95/craftpine-homepage"
                 >
                   View Source
+                </MenuItem>
+
+                <MenuItem
+                  as={Link}
+                  href="https://www.linkedin.com/in/hoangdai0908"
+                >
+                  My Linkedin{" "}
+                </MenuItem>
+
+                <MenuItem as={Link} href="mailto:hoangdai9895@gmail.com">
+                  Mail me
                 </MenuItem>
               </MenuList>
             </Menu>
