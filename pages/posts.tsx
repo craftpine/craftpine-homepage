@@ -13,6 +13,8 @@ export const notion = new Client({
 export default function Post({ data }: { data: any }) {
   const { results } = data;
 
+  // console.log(results)
+
   const bg = useColorModeValue("whiteAlpha.500", "whiteAlpha.200");
   const motionKey = useColorModeValue("light", "dark");
 
@@ -25,7 +27,7 @@ export default function Post({ data }: { data: any }) {
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        {results.slice(1)?.map((e: any, i: number) => (
+        {results?.map((e: any, i: number) => (
           <Section delay={"" + (0.1 + i / 10)} key={e.id}>
             <Box
               borderRadius={"lg"}
@@ -62,6 +64,7 @@ export async function getStaticProps() {
     block_id: pageId,
     // page_size:2
   });
+
 
   return {
     props: { data: response }, // will be passed to the page component as props
