@@ -1,25 +1,23 @@
 import { Box, Divider, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
-import { Client } from "@notionhq/client";
 import Section from "../components/Sections";
 import dayjs from "dayjs";
 import Link from "next/link";
 
-export const notion = new Client({
-  auth: process.env.NOTION_API_KEY,
-});
+import { getBlockList } from "../libs";
+
 
 export default function Post({ data }: { data: any }) {
   const { results } = data;
 
-  // console.log(results)
+  console.log(results);
 
   const bg = useColorModeValue("whiteAlpha.500", "whiteAlpha.200");
   const motionKey = useColorModeValue("light", "dark");
 
   return (
-    <Box mt={"100px"}>
+    <Box mt={"60px"}>
       <motion.div
         key={motionKey}
         initial={{ y: -20, opacity: 0 }}
@@ -59,14 +57,11 @@ export default function Post({ data }: { data: any }) {
 }
 
 export async function getStaticProps() {
-  const pageId = process.env.NOTION_BLOG_ID ?? "";
-  const response = await notion.blocks.children.list({
-    block_id: pageId,
-    // page_size:2
-  });
+  const blockId = process.env.NOTION_BLOG_ID ?? "";
 
+  const response = await getBlockList(blockId);
 
   return {
-    props: { data: response }, // will be passed to the page component as props
+    props: { data: response },
   };
 }

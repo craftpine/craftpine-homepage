@@ -7,11 +7,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import { notion } from "../posts";
 import { motion } from "framer-motion";
 import Section from "../../components/Sections";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import Link from "next/link";
+import { getBlockList, getPage } from "../../libs";
 
 function renderContent(data: any) {
   let element = null;
@@ -75,13 +75,11 @@ export default function PostDetail({ page, block }: any) {
 }
 
 export async function getStaticPaths() {
-  const pageId = process.env.NOTION_BLOG_ID ?? "";
-  const response = await notion.blocks.children.list({
-    block_id: pageId,
-  });
+  const blockId = process.env.NOTION_BLOG_ID ?? "";
+  const response = await getBlockList(blockId)
 
   return {
-    paths: response.results.map((e) => ({
+    paths: response.results.map((e:any) => ({
       params: {
         id: e.id,
       },
@@ -93,13 +91,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: any) {
   const { id } = params;
 
-  const page = await notion.pages.retrieve({
-    page_id: id,
-  });
+  const page = await getPage(id)
 
-  const block = await notion.blocks.children.list({
-    block_id: id,
-  });
+  const block = await getBlockList(id)
 
   return {
     props: { page, block },
