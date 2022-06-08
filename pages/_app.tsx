@@ -9,7 +9,7 @@ if (typeof window !== "undefined") {
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Layout router={router}>
-      <Component {...pageProps} key={router.route} />
+        <Component {...pageProps} key={router.route} />
     </Layout>
   );
 }
