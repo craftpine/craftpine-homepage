@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Section from "../components/Sections";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
+import img from '../public/images/icons8-pineapple-60.png'
 
 export default function Works({ isVisible }: any) {
   const certUrl =
@@ -73,7 +74,11 @@ export default function Works({ isVisible }: any) {
                 <Image
                   borderRadius={12}
                   src={renderImgUrl(e.id)}
+                  // src="/images/icons8-pineapple-60.png"
                   alt={e.text}
+                  loading="lazy"
+                  fallbackSrc="/images/icons8-pineapple-60.png"
+                  ignoreFallback={true}
                 />
                 <Text mt={2} fontSize={14}>
                   {e.text}

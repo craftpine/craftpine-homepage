@@ -11,8 +11,6 @@ import { getBlockList } from "../libs";
 export default function Post({ data }: { data: any }) {
   const { results } = data;
 
-  console.log(results);
-
   const bg = useColorModeValue("whiteAlpha.500", "whiteAlpha.200");
   const motionKey = useColorModeValue("light", "dark");
 
