@@ -13,3 +13,5 @@ export type BlogPost = {
     description: string;
     date: string
 }
+
+declare module 'parallax-js'
