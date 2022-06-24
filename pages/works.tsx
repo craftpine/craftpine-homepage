@@ -1,10 +1,17 @@
-import { Box, Button, Grid, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Grid,
+  Image,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Section from "../components/Sections";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
-import img from '../public/images/icons8-pineapple-60.png'
+import img from "../public/images/icons8-pineapple-60.png";
 
 export default function Works({ isVisible }: any) {
   const certUrl =
@@ -90,12 +97,18 @@ export default function Works({ isVisible }: any) {
       </Grid>
 
       <Box display="flex" justifyContent="center" mb={8}>
+        <motion.div whileHover={{ scale: 1.05 }}>
           <Link href="/">
-            <Button leftIcon={<ChevronLeftIcon />} colorScheme="teal">
+            <Button
+              leftIcon={<ChevronLeftIcon />}
+              colorScheme="teal"
+              borderRadius="50px"
+            >
               Go Back
             </Button>
           </Link>
-        </Box>
+        </motion.div>
+      </Box>
     </motion.div>
   );
 }

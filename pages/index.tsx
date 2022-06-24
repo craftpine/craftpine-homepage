@@ -14,6 +14,7 @@ import Paragraph from "../components/Paragraph";
 import Section from "../components/Sections";
 import NextLink from "next/link";
 import { BioSection, BioYear } from "../components/Bio";
+import {motion} from 'framer-motion'
 
 const Home: NextPage = () => {
   return (
@@ -57,7 +58,7 @@ const Home: NextPage = () => {
               display="inline-block"
               borderRadius="full"
               alt="Profile Image"
-              src="/images/pineaple.jpeg"
+              src="/images/Image.png"
             />
           </Box>
         </Box>
@@ -78,9 +79,17 @@ const Home: NextPage = () => {
         </Paragraph>
         <Box justifyContent="center" display="flex" my={4}>
           <NextLink href="/works" passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              My portfolio
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+            >
+              <Button
+                rightIcon={<ChevronRightIcon />}
+                colorScheme="teal"
+                borderRadius="50px"
+              >
+                My portfolio
+              </Button>
+            </motion.div>
           </NextLink>
         </Box>
       </Section>

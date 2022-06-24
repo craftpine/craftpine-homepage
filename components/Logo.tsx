@@ -2,6 +2,8 @@ import { Text, useColorModeValue } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { GiPineapple } from "react-icons/gi";
+
+
 const LogoBox = styled.span`
   font-weight: bold;
   font-size: 18px;

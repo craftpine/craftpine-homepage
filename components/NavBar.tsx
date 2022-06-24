@@ -19,6 +19,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import Logo from "./Logo";
 import ThemeToggleButton from "./ThemeToggleButton";
+import { motion } from "framer-motion";
 
 const LinkItem = ({ href, path, target, children, ...props }: any) => {
   const active = path === href;
@@ -73,23 +74,25 @@ const Navbar = (props: any) => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
+          <motion.div>
+            <LinkItem href="/works" path={path}>
+              Works
+            </LinkItem>
+          </motion.div>
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
-          <LinkItem
-            target="_blank"
-            href="https://github.com/hoangdai95/craftpine-homepage"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-            pl={2}
-          >
-            <IoLogoGithub />
-          </LinkItem>
+            <LinkItem
+              target="_blank"
+              href="https://github.com/hoangdai95/craftpine-homepage"
+              path={path}
+              display="inline-flex"
+              alignItems="center"
+              style={{ gap: 4 }}
+              pl={2}
+            >
+              <IoLogoGithub />
+            </LinkItem>
 
           <LinkItem
             target="_blank"

@@ -6,7 +6,6 @@ import Navbar from "../NavBar";
 import { AnimatePresence } from "framer-motion";
 import { Router } from "next/router";
 import Head from "next/head";
-import dynamic from "next/dynamic";
 
 type LayoutProps = {
   children: React.ReactElement;
