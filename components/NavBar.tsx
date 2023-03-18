@@ -79,20 +79,20 @@ const Navbar = (props: any) => {
               Works
             </LinkItem>
           </motion.div>
-          <LinkItem href="/posts" path={path}>
-            Posts
+          <LinkItem href={process.env.PORTFOLIO ?? ""} target="blank">
+            3D Portfolio
           </LinkItem>
-            <LinkItem
-              target="_blank"
-              href="https://github.com/hoangdai95/craftpine-homepage"
-              path={path}
-              display="inline-flex"
-              alignItems="center"
-              style={{ gap: 4 }}
-              pl={2}
-            >
-              <IoLogoGithub />
-            </LinkItem>
+          <LinkItem
+            target="_blank"
+            href="https://github.com/hoangdai95/craftpine-homepage"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            <IoLogoGithub />
+          </LinkItem>
 
           <LinkItem
             target="_blank"
