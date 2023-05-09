@@ -10,11 +10,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import Paragraph from "../components/Paragraph";
-import Section from "../components/Sections";
+
+import Section from "../components/atoms/Sections";
 import NextLink from "next/link";
-import { BioSection, BioYear } from "../components/Bio";
-import {motion} from 'framer-motion'
+import { BioSection, BioYear } from "../components/atoms/Bio.style";
+import { motion } from "framer-motion";
+import Paragraph from "../components/atoms/Paragraph.style";
 
 const Home: NextPage = () => {
   return (
@@ -79,9 +80,7 @@ const Home: NextPage = () => {
         </Paragraph>
         <Box justifyContent="center" display="flex" my={4}>
           <NextLink href="/works" passHref scroll={false}>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }}>
               <Button
                 rightIcon={<ChevronRightIcon />}
                 colorScheme="teal"

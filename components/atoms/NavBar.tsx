@@ -20,6 +20,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import Logo from "./Logo";
 import ThemeToggleButton from "./ThemeToggleButton";
 import { motion } from "framer-motion";
+import React from "react";
 
 const LinkItem = ({ href, path, target, children, ...props }: any) => {
   const active = path === href;
@@ -75,13 +76,22 @@ const Navbar = (props: any) => {
           mt={{ base: 4, md: 0 }}
         >
           <motion.div>
-            <LinkItem href="/works" path={path}>
-              Works
+            <LinkItem href="/certifications" path={path}>
+              Certifications
             </LinkItem>
           </motion.div>
-          <LinkItem href={process.env.PORTFOLIO ?? ""} target="blank">
-            3D Portfolio
+
+          <LinkItem
+            href={process.env.NEXT_PUBLIC_PORTFOLIO_URL ?? ""}
+            target="blank"
+          >
+            Portfolio
           </LinkItem>
+
+          <LinkItem href={process.env.NEXT_PUBLIC_FULL_CV ?? ""} target="blank">
+            My CV
+          </LinkItem>
+
           <LinkItem
             target="_blank"
             href="https://github.com/hoangdai95/craftpine-homepage"
@@ -130,15 +140,25 @@ const Navbar = (props: any) => {
                 aria-label="Options"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                <NextLink href="/certifications" passHref>
+                  <MenuItem as={Link}>Certifications</MenuItem>
                 </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
+
+                <NextLink
+                  href={process.env.NEXT_PUBLIC_PORTFOLIO_URL ?? ""}
+                  passHref
+                  target="blank"
+                >
+                  <MenuItem as={Link}> Portfolio</MenuItem>
                 </NextLink>
-                <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
+
+                <NextLink
+                  href={process.env.NEXT_PUBLIC_FULL_CV ?? ""}
+                  target="blank"
+                >
+                  <MenuItem as={Link}> My CV</MenuItem>
                 </NextLink>
+
                 <MenuItem
                   as={Link}
                   href="https://github.com/hoangdai95/craftpine-homepage"

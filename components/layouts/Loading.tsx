@@ -1,4 +1,3 @@
-
 import React from "react";
 import styled from "@emotion/styled";
 
@@ -317,7 +316,7 @@ export default function Loading({ loading }: any) {
               <filter id="goo">
                 <fegaussianblur
                   in="SourceGraphic"
-                  stddeviation="6"
+                  stdDeviation="6"
                   result="blur"
                 ></fegaussianblur>
                 <fecolormatrix

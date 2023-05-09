@@ -4,7 +4,7 @@ import Layout from "../components/layouts/Layout";
 import { useEffect, useState } from "react";
 import Loading from "../components/layouts/Loading";
 import ParallaxLayout from "../components/layouts/Parallax";
-import './parallax.css'
+import "./parallax.css";
 
 if (typeof window !== "undefined") {
   window.history.scrollRestoration = "manual";
@@ -14,18 +14,18 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 800);
   });
 
   return (
-      <Layout router={router}>
-        <>
-        <ParallaxLayout />
+    <Layout router={router}>
+      <>
+        {/* <ParallaxLayout /> */}
 
-          <Loading loading={loading} />
-          <Component {...pageProps} key={router.route} />
-        </>
-      </Layout>
+        <Loading loading={loading} />
+        <Component {...pageProps} key={router.route} />
+      </>
+    </Layout>
   );
 }
 

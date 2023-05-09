@@ -1,8 +1,8 @@
 import { Box, ChakraProvider, Container } from "@chakra-ui/react";
 import theme from "../../libs/theme";
-import Fonts from "../Fonts";
+import Fonts from "../atoms/Fonts";
 import Footer from "./Footer";
-import Navbar from "../NavBar";
+import Navbar from "../atoms/NavBar";
 import { AnimatePresence } from "framer-motion";
 import { Router } from "next/router";
 import Head from "next/head";
