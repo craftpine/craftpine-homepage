@@ -79,7 +79,12 @@ const Home: NextPage = () => {
           hire.
         </Paragraph>
         <Box justifyContent="center" display="flex" my={4}>
-          <NextLink href="/works" passHref scroll={false}>
+          <NextLink
+            href="https://www.topcv.vn/xem-cv/D1FfBFZUAFgKDlFXV1YIV1NTUlJZUVYNXFAEAQde77"
+            passHref
+            scroll={false}
+            target="_blank"
+          >
             <motion.div whileHover={{ scale: 1.05 }}>
               <Button
                 rightIcon={<ChevronRightIcon />}
