@@ -82,13 +82,13 @@ const Navbar = (props: any) => {
           </motion.div>
 
           <LinkItem
-            href={process.env.NEXT_PUBLIC_PORTFOLIO_URL}
+            href={process.env.NEXT_PUBLIC_PORTFOLIO_URL as string ?? ""}
             target="blank"
           >
             Portfolio
           </LinkItem>
 
-          <LinkItem href={process.env.NEXT_PUBLIC_FULL_CV} target="blank">
+          <LinkItem href={process.env.NEXT_PUBLIC_FULL_CV as string ?? ""} target="blank">
             My CV
           </LinkItem>
 
