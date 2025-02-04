@@ -80,7 +80,8 @@ const Home: NextPage = () => {
         </Paragraph>
         <Box justifyContent="center" display="flex" my={4}>
           <NextLink
-            href="https://www.topcv.vn/xem-cv/D1FfBFZUAFgKDlFXV1YIV1NTUlJZUVYNXFAEAQde77"
+            // href="https://www.topcv.vn/xem-cv/CFMOAgADCgoADwcGAwcCAQcGBFIGAAABCwcDBw8d54"
+            href={process.env.NEXT_PUBLIC_FULL_CV ?? ""}
             passHref
             scroll={false}
             target="_blank"
@@ -123,6 +124,10 @@ const Home: NextPage = () => {
         <BioSection>
           <BioYear>2021</BioYear>
           Worked at BUNBU COMPANY LIMITED as Fullstack developer
+        </BioSection>
+        <BioSection>
+          <BioYear>2022</BioYear>
+          Worked at NTQ Solution as Fullstack developer
         </BioSection>
         <BioSection>
           <BioYear>2019 to present</BioYear>
