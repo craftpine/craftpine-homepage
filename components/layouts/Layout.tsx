@@ -14,7 +14,7 @@ type LayoutProps = {
   router: Router;
 };
 
-const LazyModel = dynamic(() => import('../atoms/Model'), {
+const LazyModel = dynamic(() => import('../atoms/3DModel'), {
   ssr: false,
   loading: () => <ModalLoader />
 })

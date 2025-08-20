@@ -3,6 +3,7 @@ import { forwardRef } from 'react'
 import { Box, Spinner } from '@chakra-ui/react'
 
 export const DogSpinner = () => (
+  // @ts-ignore
   <Spinner
     size="xl"
     position="absolute"

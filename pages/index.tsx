@@ -17,8 +17,10 @@ import { BioSection, BioYear } from "../components/atoms/Bio.style";
 import { motion } from "framer-motion";
 import Paragraph from "../components/atoms/Paragraph.style";
 
+// @ts-ignore
 const Home: NextPage = () => {
   return (
+     // @ts-ignore
     <Container p={4} maxW="container.sm">
       <Section delay="0.1">
         <Box
@@ -51,6 +53,7 @@ const Home: NextPage = () => {
             ml={{ md: 6 }}
             textAlign="center"
           >
+          {/* @ts-ignore */}
             <Image
               borderColor="whiteAlpha.800"
               borderWidth={2}

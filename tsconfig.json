@@ -14,7 +14,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["@emotion/react/types/css-prop"],
+    "jsxImportSource": "@emotion/react"     
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "index.d.ts", "parallax.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "build"],
 }

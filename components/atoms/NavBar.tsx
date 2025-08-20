@@ -27,6 +27,7 @@ const LinkItem = ({ href, path, target, children, ...props }: any) => {
   const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
   return (
     <NextLink href={href} passHref scroll={false}>
+      {/* @ts-ignore */}
       <Link
         p={2}
         bg={active ? "grassTeal" : undefined}
@@ -133,6 +134,7 @@ const Navbar = (props: any) => {
 
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu isLazy id="navbar-menu">
+              {/* @ts-ignore */}
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
