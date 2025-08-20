@@ -1,22 +1,22 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { loadGLTFModel } from '../../libs/model'
+import { loadGLTFModel } from '../../libs/Model'
 import { DogSpinner, DogContainer } from './3DLoader'
 
-function easeOutCirc(x) {
+function easeOutCirc(x: number) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
 }
 
 const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
-  const refRenderer = useRef()
+  const refRenderer = useRef() as any
   const urlDogGLB = (process.env.NODE_ENV === 'production' ? 'https://www.craftpine.me/homepage' : '') + '/forest_house.glb'
 
   const handleWindowResize = useCallback(() => {
-    const { current: renderer } = refRenderer
-    const { current: container } = refContainer
+    const { current: renderer } = refRenderer as any
+    const { current: container } = refContainer as any
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
@@ -27,7 +27,7 @@ const VoxelDog = () => {
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    const { current: container } = refContainer
+    const { current: container } = refContainer as any
     if (container) {
       const scW = container.clientWidth
       const scH = container.clientHeight
@@ -79,7 +79,7 @@ const VoxelDog = () => {
         setLoading(false)
       })
 
-      let req = null
+      let req: any = null
       let frame = 0
       const animate = () => {
         req = requestAnimationFrame(animate)
