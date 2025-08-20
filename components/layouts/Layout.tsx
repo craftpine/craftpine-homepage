@@ -6,11 +6,18 @@ import Navbar from "../atoms/NavBar";
 import { AnimatePresence } from "framer-motion";
 import { Router } from "next/router";
 import Head from "next/head";
+import ModalLoader from  "../atoms/3DLoader";
+import dynamic from "next/dynamic";
 
 type LayoutProps = {
   children: React.ReactElement;
   router: Router;
 };
+
+const LazyModel = dynamic(() => import('../atoms/model'), {
+  ssr: false,
+  loading: () => <ModalLoader />
+})
 
 function Layout({ children, router }: LayoutProps) {
   return (
@@ -30,6 +37,7 @@ function Layout({ children, router }: LayoutProps) {
         <Navbar path={router.asPath} />
 
         <Container maxW="container.md" pt={14}>
+          <LazyModel />
           <AnimatePresence
             exitBeforeEnter
             initial={true}
